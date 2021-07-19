@@ -13,6 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('welcome', function () {
     return view('welcome');
 });
+
+Route::get('/', [App\Http\Controllers\TopController::class, 'top']);
+
+Route::get('/top', function () {
+    return view('top');
+});
+
+Route::get('/detail', function () {
+    return view('detail');
+});
+
+Route::get('/input', function () {
+    return view('input');
+});
+
+Route::get('/confirm', function () {
+    return view('confirm');
+});
+
+Route::get('/finish', function () {
+    return view('finish');
+});
+
+
