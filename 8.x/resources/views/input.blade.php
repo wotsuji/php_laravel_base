@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Content-Style-Type" content="text/css">
@@ -17,31 +16,17 @@
     <!-- js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{{ asset('/js/common.js') }}"></script>
-</head>
-
-<body>
+  </head>
+  <body>
     <nav>
-        <div>navigate</div>
+      <div>navigate</div>
     </nav>
-    <h1>ITエンジニア飯場</h1>
-    <div><a href="{{ asset('/input') }}">input</a></div>
-
-    <br>
-    <br>
-    <br>
-    <div>
-        @php
-        var_dump($test_1['111']);
-        @endphp
-        <br>
-        {{$test_1['111']}}
-        <br>
-        {{$test_2}}
-    </div>
-    <form method="POST" action="/profile">
-        @csrf
+    <h1>ITエンジニア飯場 入力画面</h1>
+    <p>{{ $msg ?? '' }}</p>
+    <form method="post" action="{{ asset('/input') }}">
+      {{ csrf_field() }}
+      <input type="text" name="name">
+      <input type="submit">
     </form>
-    {{ url("/img/hoge.svg") }}
-</body>
-
+  </body>
 </html>

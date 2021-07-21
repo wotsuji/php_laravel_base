@@ -23,25 +23,8 @@
     <nav>
         <div>navigate</div>
     </nav>
-    <h1>ITエンジニア飯場</h1>
-    <div><a href="{{ asset('/input') }}">input</a></div>
-
-    <br>
-    <br>
-    <br>
-    <div>
-        @php
-        var_dump($test_1['111']);
-        @endphp
-        <br>
-        {{$test_1['111']}}
-        <br>
-        {{$test_2}}
-    </div>
-    <form method="POST" action="/profile">
-        @csrf
-    </form>
-    {{ url("/img/hoge.svg") }}
+    <h1>ITエンジニア飯場 確認画面</h1>
+    <p>{{ $msg ?? '' }}</p>
 </body>
 
 </html>

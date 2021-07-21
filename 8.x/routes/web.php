@@ -19,24 +19,13 @@ Route::get('welcome', function () {
 
 Route::get('/', [App\Http\Controllers\TopController::class, 'top']);
 
-Route::get('/top', function () {
-    return view('top');
-});
+Route::get('/input', [App\Http\Controllers\TopController::class, 'input']);
+Route::post('/input', [App\Http\Controllers\TopController::class, 'inputed']);
 
 Route::get('/detail', function () {
     return view('detail');
 });
 
-Route::get('/input', function () {
-    return view('input');
-});
-
-Route::get('/confirm', function () {
-    return view('confirm');
-});
-
 Route::get('/finish', function () {
     return view('finish');
 });
-
-
